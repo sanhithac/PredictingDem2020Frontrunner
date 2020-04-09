@@ -9,5 +9,6 @@ App Name
   2020DemFrontRunner
 App ID
   f6083e45-222c-41e1-9b76-c50836fd00da
-API Keys	Show	Active	2020-04-08	never	delete
+API Key
+  MRAJUxGvim9gZYw4sGZ0ZH9hAgLrAeDR
 
