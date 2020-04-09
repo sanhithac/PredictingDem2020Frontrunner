@@ -7,8 +7,10 @@ We will perform parts of speech analysis in the sentences where the nominees are
 
 App Name 
   2020DemFrontRunner
+  
 App ID
   f6083e45-222c-41e1-9b76-c50836fd00da
+  
 API Key
   MRAJUxGvim9gZYw4sGZ0ZH9hAgLrAeDR
 
