@@ -11,7 +11,7 @@ r = requests.get(get_url("clinton, hillary", "20160101", "20161231"))
 
 r= r.json()['response']['docs']
 
-#getting abstracts for the articles where Trump is mentioned in 2016
+#getting abstracts for the articles where Clinton is mentioned in 2016
 clinton16 = ""
 
 for i in r:
