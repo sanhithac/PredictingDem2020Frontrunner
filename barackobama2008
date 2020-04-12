@@ -2,10 +2,19 @@ import requests
 import pandas as pd
 
 #barack obama 2008
-def get_url (q):
-    url = ("https://api.nytimes.com/svc/search/v2/articlesearch.json?q=obama, barack&facet_fields=source&facet=true&begin_date=20080101&end_date=20081231&api-key=MRAJUxGvim9gZYw4sGZ0ZH9hAgLrAeDR")
+def get_url (q, begin_date, end_date):
+    url = ("https://api.nytimes.com/svc/search/v2/articlesearch.json?q="+q+"&facet_fields=source&facet=true&begin_date="+begin_date+"&end_date="+end_date+"&api-key=MRAJUxGvim9gZYw4sGZ0ZH9hAgLrAeDR")
     return url
 
-r = requests.get(get_url("obama, barack"))
+r = requests.get(get_url("obama, barack", "20080101", "20081231"))
+
+r= r.json()['response']['docs']
+
+obama08 = ""
+
+for i in r:
+    obama08 += i['abstract']
+    
+obama08
 
 #r.json()
