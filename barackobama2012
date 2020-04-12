@@ -2,7 +2,7 @@
 import requests
 import pandas as pd
 
-#getting data for barack obama 2008
+#getting data for barack obama 2012
 def get_url (q, begin_date, end_date):
     url = ("https://api.nytimes.com/svc/search/v2/articlesearch.json?q="+q+"&facet_fields=source&facet=true&begin_date="+begin_date+"&end_date="+end_date+"&api-key=MRAJUxGvim9gZYw4sGZ0ZH9hAgLrAeDR")
     return url
@@ -11,7 +11,7 @@ r = requests.get(get_url("obama, barack", "20120101", "20121231"))
 
 r= r.json()['response']['docs']
 
-#getting abstracts for the articles where Obama is mentioned in 2008
+#getting abstracts for the articles where Obama is mentioned in 20
 obama12 = ""
 
 for i in r:
