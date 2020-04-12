@@ -1,11 +1,44 @@
+#full john mccain
 import requests
 import pandas as pd
 
-#john mccain 2008
-def get_url (q):
-    url = ("https://api.nytimes.com/svc/search/v2/articlesearch.json?q=mccain, john&facet_fields=source&facet=true&begin_date=20080101&end_date=20081231&api-key=MRAJUxGvim9gZYw4sGZ0ZH9hAgLrAeDR")
+#getting data for john mccain 2008
+def get_url (q, begin_date, end_date):
+    url = ("https://api.nytimes.com/svc/search/v2/articlesearch.json?q="+q+"&facet_fields=source&facet=true&begin_date="+begin_date+"&end_date="+end_date+"&api-key=MRAJUxGvim9gZYw4sGZ0ZH9hAgLrAeDR")
     return url
 
-r = requests.get(get_url("mccain, john"))
+r = requests.get(get_url("mccain, john", "20080101", "20081231"))
 
-#r.json()
+r= r.json()['response']['docs']
+
+#getting abstracts for the articles where Mccain is mentioned in 2008
+mccain08 = ""
+
+for i in r:
+    mccain08 += i['abstract']
+    
+mccain08
+
+#cleaning the text
+#pip install nltk
+
+#importing and downloading necessary libraries for cleaning the text
+import nltk
+nltk.download('punkt')
+from nltk.tokenize import sent_tokenize
+from nltk.tokenize import word_tokenize
+import re
+from nltk.corpus import stopwords
+nltk.download('stopwords')
+from nltk.stem import PorterStemmer
+from nltk.tokenize import sent_tokenize, word_tokenize
+
+#getting rid of punctuation
+mccain08 = re.sub(r'[^(a-zA-Z)\s]','', mccain08)
+
+tokenized_word=word_tokenize(mccain08)
+
+stop_words = stopwords.words('english')
+[word for word in tokenized_word if word not in stop_words]
+
+tokenized_word
