@@ -1,0 +1,22 @@
+# Load library
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+import nltk
+nltk.download('punkt')
+
+# You will have to download the set of stop words the first time
+import nltk
+nltk.download('stopwords')
+
+# Create word tokens
+tokenized_word=word_tokenize(obama08)
+tokenized_word
+
+# Load stop words
+stop_words = stopwords.words('english')
+
+# Show stop words
+stop_words[:5]
+
+# Remove stop words
+[word for word in tokenized_word if word not in stop_words]
