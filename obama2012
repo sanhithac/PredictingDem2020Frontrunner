@@ -1,0 +1,10 @@
+import requests
+import pandas as pd
+
+def get_url (q):
+    url = ("https://api.nytimes.com/svc/search/v2/articlesearch.json?q=obama&facet_fields=source&facet=true&begin_date=20120101&end_date=20121231&api-key=MRAJUxGvim9gZYw4sGZ0ZH9hAgLrAeDR")
+    return url
+
+r = requests.get(get_url("obama"))
+
+#r.json()
