@@ -40,10 +40,4 @@ tokenized_word=word_tokenize(obama08)
 stop_words = stopwords.words('english')
 [word for word in tokenized_word if word not in stop_words]
 
-#stemming
-ps = PorterStemmer()
-stemmed_words=[]
-for w in tokenized_word:
-    stemmed_words.append(ps.stem(w))
-    
-stemmed_words
+tokenized_word
