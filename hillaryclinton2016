@@ -1,0 +1,11 @@
+import requests
+import pandas as pd
+
+#hillary clinton 2016
+def get_url (q):
+    url = ("https://api.nytimes.com/svc/search/v2/articlesearch.json?q=clinton, hillary&facet_fields=source&facet=true&begin_date=20160101&end_date=20161231&api-key=MRAJUxGvim9gZYw4sGZ0ZH9hAgLrAeDR")
+    return url
+
+r = requests.get(get_url("clinton, hillary"))
+
+#r.json()
