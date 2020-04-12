@@ -1,11 +1,42 @@
+#full barack obama 2012
 import requests
 import pandas as pd
 
-#barack obama 2012
-def get_url (q):
-    url = ("https://api.nytimes.com/svc/search/v2/articlesearch.json?q=obama, barack&facet_fields=source&facet=true&begin_date=20120101&end_date=20121231&api-key=MRAJUxGvim9gZYw4sGZ0ZH9hAgLrAeDR")
+#getting data for barack obama 2008
+def get_url (q, begin_date, end_date):
+    url = ("https://api.nytimes.com/svc/search/v2/articlesearch.json?q="+q+"&facet_fields=source&facet=true&begin_date="+begin_date+"&end_date="+end_date+"&api-key=MRAJUxGvim9gZYw4sGZ0ZH9hAgLrAeDR")
     return url
 
-r = requests.get(get_url("obama, barack"))
+r = requests.get(get_url("obama, barack", "20120101", "20121231"))
 
-#r.json()
+r= r.json()['response']['docs']
+
+#getting abstracts for the articles where Obama is mentioned in 2008
+obama12 = ""
+
+for i in r:
+    obama12 += i['abstract']
+    
+obama12
+
+#cleaning the text
+#pip install nltk
+
+#importing and downloading necessary libraries for cleaning the text
+import nltk
+nltk.download('punkt')
+from nltk.tokenize import sent_tokenize
+from nltk.tokenize import word_tokenize
+import re
+from nltk.corpus import stopwords
+nltk.download('stopwords')
+from nltk.stem import PorterStemmer
+from nltk.tokenize import sent_tokenize, word_tokenize
+
+#getting rid of punctuation
+obama08 = re.sub(r'[^(a-zA-Z)\s]','', obama12)
+
+tokenized_word=word_tokenize(obama12)
+
+stop_words = stopwords.words('english')
+[word for word in tokenized_word if word not in stop_words]
