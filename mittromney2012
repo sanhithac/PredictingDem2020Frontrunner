@@ -34,7 +34,7 @@ from nltk.stem import PorterStemmer
 from nltk.tokenize import sent_tokenize, word_tokenize
 
 #getting rid of punctuation
-obama08 = re.sub(r'[^(a-zA-Z)\s]','', romney12)
+romney12 = re.sub(r'[^(a-zA-Z)\s]','', romney12)
 
 tokenized_word=word_tokenize(romney12)
 
