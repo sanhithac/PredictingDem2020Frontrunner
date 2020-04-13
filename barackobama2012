@@ -20,7 +20,7 @@ for i in r:
 obama12
 
 #cleaning the text
-#pip install nltk
+!pip install nltk
 
 #importing and downloading necessary libraries for cleaning the text
 import nltk
