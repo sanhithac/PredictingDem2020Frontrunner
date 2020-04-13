@@ -15,6 +15,6 @@ def gc_sentiment(text):
 import pandas as pd
 gc_results = [gc_sentiment(row) for row in tqdm(tokenized_word, ncols = 100)]
 gc_score, gc_magnitude = zip(*gc_results) # Unpacking the result into 2 lists
-gc = list(zip(dataset, gc_score, gc_magnitude))
+gc = list(zip(tokenized_word, gc_score, gc_magnitude))
 columns = ['text', 'score', 'magnitude']
 gc_df = pd.DataFrame(gc, columns = columns)
