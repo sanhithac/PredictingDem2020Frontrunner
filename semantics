@@ -1,0 +1,45 @@
+#hillary clinton
+def get_url (q):
+    url = ("http://api.nytimes.com/svc/semantic/v2/concept/name/nytd_per/Clinton, Hillary?fields=all&api-key=MRAJUxGvim9gZYw4sGZ0ZH9hAgLrAeDR")
+    return url
+
+r = requests.get(get_url("Clinton, Hillary"))
+
+#r.json()
+
+#donald trump
+def get_url (q):
+    url = ("http://api.nytimes.com/svc/semantic/v2/concept/name/nytd_per/Trump, Donald?fields=all&api-key=MRAJUxGvim9gZYw4sGZ0ZH9hAgLrAeDR")
+    return url
+
+r = requests.get(get_url("Trump, Donald"))
+
+#r.json()
+
+#mitt romney
+def get_url (q):
+    url = ("http://api.nytimes.com/svc/semantic/v2/concept/name/nytd_per/Romney, Mitt?fields=all&api-key=MRAJUxGvim9gZYw4sGZ0ZH9hAgLrAeDR")
+    return url
+
+r = requests.get(get_url("Romney, Mitt"))
+
+#r.json()
+
+#john mccain
+def get_url (q):
+    url = ("http://api.nytimes.com/svc/semantic/v2/concept/name/nytd_per/Mccain, John?fields=all&api-key=MRAJUxGvim9gZYw4sGZ0ZH9hAgLrAeDR")
+    return url
+
+r = requests.get(get_url("Mccain, John"))
+
+#r.json()
+
+#barack obama
+def get_url (q):
+    url = ("http://api.nytimes.com/svc/semantic/v2/concept/name/nytd_per/Obama, Barack?fields=all&api-key=MRAJUxGvim9gZYw4sGZ0ZH9hAgLrAeDR")
+    return url
+
+r = requests.get(get_url("Obama, Barack"))
+
+#r.json()
+
