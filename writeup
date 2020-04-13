@@ -1,0 +1,12 @@
+Data Collection
+Describe the source of your data or provide details of how you collected the data.
+
+We collected our data from articles published on the New York Times. We collected the data by using APIs that the New York Times provides for developers to use. We used the Article Search API, which allows a user to search articles by keywords. We then added an additional query to search for articles published during a specific time period. In our case, the time period is when each frontrunner was running for office. We defined a function that contained the url that calls the API. We then called that function. We also used the Semantic API with a similar process. 
+
+Data Format/Description
+Describe the format of your dataset in 1-2 paragraphs. E.g.: What files are included? What is the file format / structure of the data? What are the most relevant attributes within each file and what do they mean? 
+
+The APIs we used returned the data to us in JSON. The Article Search API returns articles that fit the query posed, and data associated with that article. For example, one of our queries was to find articles with the keyword “Obama” that were published in 2008. The API then returns these articles. We returned all of the fields, and the ones that are most relevant for our analysis are: headline, pub_date, web_url, snippet, lead_paragraph. Headline is the headline of the article, pub_date is the date the article was published, web_url is the URL to the article, snippet is a sentence or two from the article, and lead_paragraph is the first paragraph of the article. Headline is especially useful because we will conduct pre-processing on all of the headline data to further analyze it. This is because the headline condenses the entire article into one sentence, so we can draw a lot of insight from it such as sentiment, key words, etc.  
+
+
+The Semantics API returns people, places, organizations, and other types of terms that make up the vocabulary used by The New York Times. We wanted to put each frontrunner’s name into the query to see what words would come back with each. Once we received the data and looked at it, we realized that it isn’t very useful to us at the moment. 
