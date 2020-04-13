@@ -18,3 +18,5 @@ gc_score, gc_magnitude = zip(*gc_results) # Unpacking the result into 2 lists
 gc = list(zip(tokenized_word, gc_score, gc_magnitude))
 columns = ['text', 'score', 'magnitude']
 gc_df = pd.DataFrame(gc, columns = columns)
+
+gc_df
