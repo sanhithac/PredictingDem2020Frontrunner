@@ -31,6 +31,8 @@ from nltk.corpus import stopwords
 nltk.download('stopwords')
 from nltk.stem import PorterStemmer
 from nltk.tokenize import sent_tokenize, word_tokenize
+from nltk.probability import FreqDist
+import matplotlib.pyplot as plt
 
 #getting rid of punctuation
 obama08 = re.sub(r'[^(a-zA-Z)\s]','', obama08)
@@ -38,6 +40,14 @@ obama08 = re.sub(r'[^(a-zA-Z)\s]','', obama08)
 tokenized_word=word_tokenize(obama08)
 
 stop_words = stopwords.words('english')
-[word for word in tokenized_word if word not in stop_words]
+tokenized_word = [each_string.lower() for each_string in tokenized_word]
+tokenized_word = [word for word in tokenized_word if word not in stop_words]
 
-tokenized_word
+#find which word occurs most frequently
+fdist = FreqDist(tokenized_word)
+
+#plot frequency
+fdist.plot(30,cumulative=False)
+plt.show()
+
+
