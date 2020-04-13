@@ -1,6 +1,18 @@
-#full john mccain
+#Cleaning, tokenizingm, and analyzing data for John McCain in 2008
 import requests
+import json
+import re
 import pandas as pd
+import matplotlib.pyplot as plt
+
+#install before running if you don't have NLTK
+!pip install nltk
+import nltk
+nltk.download('punkt')
+from nltk.corpus import stopwords
+nltk.download('stopwords')
+from nltk.probability import FreqDist
+from nltk.tokenize import sent_tokenize, word_tokenize
 
 #getting data for john mccain 2008
 def get_url (q, begin_date, end_date):
@@ -19,26 +31,28 @@ for i in r:
     
 mccain08
 
-#cleaning the text
-#pip install nltk
 
-#importing and downloading necessary libraries for cleaning the text
-import nltk
-nltk.download('punkt')
-from nltk.tokenize import sent_tokenize
-from nltk.tokenize import word_tokenize
-import re
-from nltk.corpus import stopwords
-nltk.download('stopwords')
-from nltk.stem import PorterStemmer
-from nltk.tokenize import sent_tokenize, word_tokenize
+#TOKENIZING AND ANALYZING SENTENCES
+tokenized_text=sent_tokenize(mccain08)
+print(tokenized_text)
 
+
+#CLEANING AND TOKENIZING WORDS
 #getting rid of punctuation
 mccain08 = re.sub(r'[^(a-zA-Z)\s]','', mccain08)
 
+
+#tokenize words
 tokenized_word=word_tokenize(mccain08)
 
-stop_words = stopwords.words('english')
-[word for word in tokenized_word if word not in stop_words]
 
-tokenized_word
+#make everything lowercase and remove stop words
+stop_words = stopwords.words('english')
+tokenized_word = [each_string.lower() for each_string in tokenized_word]
+tokenized_word = [word for word in tokenized_word if word not in stop_words]
+
+
+#plot freq dist of the words used to describe Romney
+fdist = FreqDist(tokenized_word)
+fdist.plot(30,cumulative=False)
+plt.show()
