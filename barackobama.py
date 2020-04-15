@@ -52,7 +52,7 @@ print(tokenized_text)
 
 #CLEANING AND TOKENIZING WORDS
 #removing punctuation
-obama_w = re.sub(r'[^(a-zA-Z)\s]','', obama08)
+obama_w = re.sub(r'[^(a-zA-Z)\s]','', obama)
 obama_w
 
 
