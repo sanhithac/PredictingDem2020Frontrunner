@@ -27,7 +27,7 @@ r= r.json()['response']['docs']
 obama = ""
 
 for i in r:
-    obama += i['abstract']
+    obama += (" "+ i['abstract'])
     
 obama
 
@@ -40,7 +40,7 @@ r=r.json()['response']['docs']
 #obama12 = ""
 
 for i in r:
-    obama += i['abstract']
+    obama += (" "+ i['abstract'])
     
 obama
 
