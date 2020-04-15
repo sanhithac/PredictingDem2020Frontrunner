@@ -34,7 +34,7 @@ r= r.json()['response']['docs']
 bernie = ""
 
 for i in r:
-    bernie += i['abstract']
+    bernie += (" "+ i['abstract'])
     
 bernie
 
@@ -80,7 +80,7 @@ r= r.json()['response']['docs']
 warren = ""
 
 for i in r:
-    warren += i['abstract']
+    warren += (" "+ i['abstract'])
     
 warren
 
@@ -126,7 +126,7 @@ r= r.json()['response']['docs']
 biden = ""
 
 for i in r:
-    biden += i['abstract']
+    biden += (" "+ i['abstract'])
     
 biden
 
