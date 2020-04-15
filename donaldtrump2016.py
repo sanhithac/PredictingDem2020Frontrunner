@@ -27,7 +27,7 @@ r= r.json()['response']['docs']
 trump16 = ""
 
 for i in r:
-    trump16 += " "+i['abstract']
+    trump16 += (" "+ i['abstract'])
     
 trump16
 
