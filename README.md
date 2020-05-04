@@ -14,3 +14,10 @@ App ID
 API Key
   MRAJUxGvim9gZYw4sGZ0ZH9hAgLrAeDR
 
+Twitter:
+
+API key:
+RwBJYVr02cfFGp1x0IHUSceeq
+
+API secret key:
+THSOSTw81vn1kDByZi1e2auBFfvkUZmCmzjtS6QPPbPDznENWL
