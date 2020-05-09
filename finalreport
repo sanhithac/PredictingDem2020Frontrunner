@@ -3,6 +3,8 @@
 2. Explain and evaluate your results, numerically or via visualizations. Should show what insights have been gained,
 or how well your method works.
 
+We found that President Trump has the worst sentiment of -0.2541125 and Joe Biden has the best sentiment at 0.4634625. 
+
 3. Describe related work
 Describe in what ways your work is different from what others have done online in blog posts/Kaggle/etc.
 
