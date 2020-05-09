@@ -1,0 +1,18 @@
+1. Should include some machine learning experiments. Could also be a practical application.
+
+2. Explain and evaluate your results, numerically or via visualizations. Should show what insights have been gained,
+or how well your method works.
+
+3. Describe related work
+Describe in what ways your work is different from what others have done online in blog posts/Kaggle/etc.
+
+4. Conclusion section
+What insights did you gain? What worked, what didn't work?
+What else would you do if you had more time (or could start over)?
+
+5. Acknowledgments section (mandatory!)
+Mention all libraries used, all third-party material used!
+You may not use third-party images without attribution
+
+
+Include Source Code as Juypter Notebook/ZIP file/etc!
