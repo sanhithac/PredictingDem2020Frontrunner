@@ -1,3 +1,12 @@
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.preprocessing import LabelBinarizer
+from sklearn import metrics
+from sklearn.model_selection import train_test_split 
+from sklearn.model_selection import train_test_split 
+from sklearn.linear_model import LinearRegression
+
 dataset = pd.read_csv('train.csv')
 
 #preprocessing
