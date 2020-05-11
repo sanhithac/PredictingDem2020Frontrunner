@@ -37,7 +37,6 @@ y_pred = regressor.predict(X_test)
 df = pd.DataFrame({'Actual': y_test, 'Predicted': y_pred})
 
 accuracy = accuracy_score(y_test ,y_pred)
-parameters = model.coef_
 
 print("Accuracy: ")
 print(accuracy)
