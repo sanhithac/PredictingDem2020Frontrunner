@@ -13,9 +13,12 @@ result = pd.concat([dataset['Name'], dataset['Age'], enc, dataset.iloc[:,7:]], a
 #splitting into train and test
 res = result.fillna(method='ffill')
 li=list(res.columns)
-X = res[li[1:-2]].values
-y = res['Won'].values
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+train = res[:-2]
+validate = res[22:]
+
+X = train[li[1:-2]].values
+V = validate [li[1:-2]].values
+y = train['Won'].values
 
 #fitting the model and testing
 regressor = LinearRegression()  
@@ -29,4 +32,7 @@ print('Mean Squared Error:', metrics.mean_squared_error(y_test, y_pred))
 print('Root Mean Squared Error:', np.sqrt(metrics.mean_squared_error(y_test, y_pred)))
 
 #checking who wins
+v_pred = regressor.predict(V)
 
+df = pd.DataFrame({'Predicted': v_pred})
+df
