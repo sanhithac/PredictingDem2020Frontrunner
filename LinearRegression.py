@@ -22,6 +22,8 @@ X = train[li[1:-2]].values
 V = validate [li[1:-2]].values
 y = train['Won'].values
 
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+
 #fitting the model and testing
 regressor = LinearRegression()  
 regressor.fit(X_train, y_train)
