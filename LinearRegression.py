@@ -4,6 +4,8 @@ from sklearn import metrics
 from sklearn.model_selection import train_test_split 
 from sklearn.linear_model import LinearRegression
 
+dataset = pd.read_csv('train.csv')
+
 #one hot encoding
 lb = LabelBinarizer()
 data = dataset[['Education', 'Religion', 'Ethnicity', 'Occupation', 'Party']]
